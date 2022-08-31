@@ -1,10 +1,7 @@
 package com.quintrix.huangresttest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,5 +24,9 @@ public class EmployeeController {
         return one;
     }
 
+    @GetMapping("/home/{id}")
+    public Employee getEmployeeById(@PathVariable int id){
+        return new Employee("guy", id);
+    }
 
 }
