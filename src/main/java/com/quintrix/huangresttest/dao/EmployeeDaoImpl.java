@@ -25,7 +25,10 @@ public class EmployeeDaoImpl implements EmployeeDao{
     }
 
     @Override
-    public void deleteEmployee(int id) {
+    public void deleteEmployee(String name, int id) {
+        String sql = "DELETE FROM employees WHERE employee_id = " + id + " AND name = " + name;
+
+        jdbcTemplate.update(sql);
 
     }
 
