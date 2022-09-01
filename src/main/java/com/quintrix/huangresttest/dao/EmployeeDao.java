@@ -7,6 +7,6 @@ import java.util.List;
 public interface EmployeeDao {
     public List<Employee> getEmployees();
     public Employee postEmployee(Employee employee);
-    public void deleteEmployee();
+    public void deleteEmployee(int id);
     public void putEmployee(Employee employee);
 }

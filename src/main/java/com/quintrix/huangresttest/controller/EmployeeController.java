@@ -28,12 +28,12 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/erase/{id}")
     public void deleteEmployee(@PathVariable int id){
-
+        employeeService.deleteEmployee(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/place")
     public void putEmployee(@RequestBody Employee employee){
-
+        employeeService.putEmployee(employee);
     }
 
 }

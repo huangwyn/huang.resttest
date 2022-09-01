@@ -25,7 +25,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     }
 
     @Override
-    public void deleteEmployee() {
+    public void deleteEmployee(int id) {
 
     }
 
