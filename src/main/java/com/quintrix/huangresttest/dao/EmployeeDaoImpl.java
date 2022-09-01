@@ -41,7 +41,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
     @Override
     public void putEmployee(Employee employee) {
-        String sql = "UPDATE employee SET name = '" + employee.getName() + "' WHERE employee_id = " + employee.getEmployee_id() + ";";
+        String sql = "UPDATE employees SET name = '" + employee.getName() + "' WHERE employee_id = " + employee.getEmployee_id() + ";";
 
         jdbcTemplate.update(sql);
 
