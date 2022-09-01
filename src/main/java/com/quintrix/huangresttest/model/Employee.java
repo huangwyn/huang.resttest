@@ -1,4 +1,4 @@
-package com.quintrix.huangresttest;
+package com.quintrix.huangresttest.model;
 
 public class Employee {
     String name;

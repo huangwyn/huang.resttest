@@ -1,5 +1,7 @@
-package com.quintrix.huangresttest;
+package com.quintrix.huangresttest.controller;
 
+import com.quintrix.huangresttest.model.Employee;
+import com.quintrix.huangresttest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +10,9 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
+
+    @Autowired
+    EmployeeService employeeService;
 
     @GetMapping("/home")
     public List<Employee> getEmployees(){
