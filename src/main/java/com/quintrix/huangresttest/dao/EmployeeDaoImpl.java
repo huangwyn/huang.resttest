@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class EmployeeDaoImpl implements EmployeeDao{
 
     @Autowired
@@ -24,6 +25,8 @@ public class EmployeeDaoImpl implements EmployeeDao{
         Employee one = new Employee();
         one.setName(employee.getName());
         one.setIdNumber(employee.getIdNumber());
+        String sql = "INSERT INTO employees (name, employee_id) VALUES (" + one.getName() + ", " + one.getIdNumber() + ");";
+        jdbcTemplate.update(sql);
         return one;
     }
 

@@ -14,7 +14,7 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/home")
+    @RequestMapping(method = RequestMethod.GET, value = "/employee")
     public List<Employee> getEmployees(){
         //list of employees
         return employeeService.getEmployees();
