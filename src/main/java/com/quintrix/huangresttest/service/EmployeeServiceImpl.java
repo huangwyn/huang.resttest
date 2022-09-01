@@ -3,6 +3,7 @@ package com.quintrix.huangresttest.service;
 import com.quintrix.huangresttest.dao.EmployeeDao;
 import com.quintrix.huangresttest.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

@@ -2,7 +2,9 @@ package com.quintrix.huangresttest.dao;
 
 import com.quintrix.huangresttest.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +15,8 @@ public class EmployeeDaoImpl implements EmployeeDao{
     JdbcTemplate jdbcTemplate;
     @Override
     public List<Employee> getEmployees() {
-        return Arrays.asList(new Employee("billly", 5), new Employee("one", 2));
+        String sql = "SELECT * FROM employees";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Employee>(Employee.class));
     }
 
     @Override
