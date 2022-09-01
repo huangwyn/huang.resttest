@@ -16,7 +16,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     }
 
     @Override
-    public Employee getEmployeeId() {
+    public Employee postEmployee() {
         return null;
     }
 
