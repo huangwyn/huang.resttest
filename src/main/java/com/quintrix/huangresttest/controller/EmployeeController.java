@@ -14,14 +14,14 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping("/home")
+    @RequestMapping(method = RequestMethod.GET, value = "/home")
     public List<Employee> getEmployees(){
         //list of employees
         return Arrays.asList(new Employee("billly", 5), new Employee("one", 2));
 
     }
 
-    @PostMapping("/employee")
+    @RequestMapping(method = RequestMethod.POST, value = "/employee")
     public Employee postEmployee(@RequestBody Employee employee){
         Employee one = new Employee();
         one.setName(employee.getName());
@@ -29,9 +29,14 @@ public class EmployeeController {
         return one;
     }
 
-    @GetMapping("/home/{id}")
-    public Employee getEmployeeById(@PathVariable int id){
-        return new Employee("guy", id);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/erase/{id}")
+    public void deleteEmployee(@PathVariable int id){
+
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/place")
+    public void putEmployee(@RequestBody Employee employee){
+
     }
 
 }
