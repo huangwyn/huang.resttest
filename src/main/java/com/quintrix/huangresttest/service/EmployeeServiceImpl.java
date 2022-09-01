@@ -17,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee postEmployee() {
-        return employeeDao.postEmployee();
+    public Employee postEmployee(Employee employee) {
+        return employeeDao.postEmployee(employee);
     }
 
     @Override

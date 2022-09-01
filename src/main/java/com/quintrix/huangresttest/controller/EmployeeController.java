@@ -17,16 +17,13 @@ public class EmployeeController {
     @RequestMapping(method = RequestMethod.GET, value = "/home")
     public List<Employee> getEmployees(){
         //list of employees
-        return Arrays.asList(new Employee("billly", 5), new Employee("one", 2));
+        return employeeService.getEmployees();
 
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/employee")
     public Employee postEmployee(@RequestBody Employee employee){
-        Employee one = new Employee();
-        one.setName(employee.getName());
-        one.setIdNumber(employee.getIdNumber());
-        return one;
+        return employeeService.postEmployee(employee);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/erase/{id}")

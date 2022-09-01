@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmployeeService {
     public List<Employee> getEmployees();
-    public Employee postEmployee();
+    public Employee postEmployee(Employee employee);
     public void deleteEmployee();
     public void putEmployee(Employee employee);
 }

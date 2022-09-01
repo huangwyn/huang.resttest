@@ -4,6 +4,7 @@ import com.quintrix.huangresttest.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -12,12 +13,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
     JdbcTemplate jdbcTemplate;
     @Override
     public List<Employee> getEmployees() {
-        return null;
+        return Arrays.asList(new Employee("billly", 5), new Employee("one", 2));
     }
 
     @Override
-    public Employee postEmployee() {
-        return null;
+    public Employee postEmployee(Employee employee) {
+        Employee one = new Employee();
+        one.setName(employee.getName());
+        one.setIdNumber(employee.getIdNumber());
+        return one;
     }
 
     @Override
